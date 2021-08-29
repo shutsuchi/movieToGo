@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import {
   IonContent,
   IonIcon,
@@ -11,7 +12,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, home, homeSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, settings, settingsSharp, trashOutline, trashSharp, videocam, videocamSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -23,16 +24,22 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Home',
+    url: '/',
+    iosIcon: home,
+    mdIcon: homeSharp,
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Movies',
+    url: '/page/Movies',
+    iosIcon: videocam,
+    mdIcon: videocamSharp,
+  },
+  {
+    title: 'Manage Catalogue',
+    url: '/page/Admin',
+    iosIcon: settings,
+    mdIcon: settingsSharp,
   },
   {
     title: 'Favorites',
@@ -62,7 +69,7 @@ const appPages: AppPage[] = [
 
 const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-const Menu: React.FC = () => {
+const Menu: FC = () => {
   const location = useLocation();
 
   return (
