@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   IonContent,
+  IonFooter,
   IonIcon,
   IonItem,
   IonLabel,
@@ -10,8 +11,9 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
+  IonToggle,
+  IonToolbar,
 } from '@ionic/react';
-
 import {
   bookmarkOutline,
   heartOutline,
@@ -20,6 +22,7 @@ import {
   homeSharp,
   list,
   listSharp,
+  moon,
   settings,
   settingsSharp,
   videocam,
@@ -80,8 +83,10 @@ const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 const Menu: FC = () => {
   const location = useLocation();
   const pageTitle = location.pathname
-  console.log(pageTitle)
 
+  const toggleDarkModeHandler = () => {
+    document.body.classList.toggle("dark");
+  };
 
   return (
     <IonMenu contentId="main" type="overlay">
@@ -120,7 +125,24 @@ const Menu: FC = () => {
             </IonItem>
           ))}
         </IonList>
+
+        <IonFooter className="ion-margin-top">
+          <IonToolbar>
+            <IonIcon
+              slot="start"
+              icon={moon}
+              className="component-icon component-icon-dark ion-margin-end"
+            />
+            <IonLabel>Dark Mode</IonLabel>
+            <IonToggle
+              slot="end"
+              name="darkMode"
+              onIonChange={toggleDarkModeHandler}
+            />
+          </IonToolbar>
+        </IonFooter>
       </IonContent>
+
     </IonMenu>
   );
 };
