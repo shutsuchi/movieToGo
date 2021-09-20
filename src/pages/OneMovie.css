@@ -1,0 +1,26 @@
+.title {
+  font-size: 15px;
+}
+
+.row:nth-child(odd) {
+  /* --background: #000 */
+  background: var(--ion-color-light-shade);
+}
+
+.description {
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.button-text {
+  text-transform: none;
+}
+
+.genre {
+  margin-right: .5rem;
+  padding: 5px;
+  background: var(--ion-color-dark-tint);
+  color: #fff;
+  border-radius: .5rem;
+  line-height: 15px;
+}

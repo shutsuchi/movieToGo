@@ -1,0 +1,12 @@
+.title {
+  font-size: 15px;
+}
+
+.description {
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.button-text {
+  text-transform: none;
+}
