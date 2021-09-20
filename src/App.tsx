@@ -4,10 +4,13 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 // import Menu from '@/components/Menu';
 import Menu from './components/organisms/Menu';
+import PageMeta from './components/molecules/PageMeta';
 import Movies from './pages/Movies';
+import OneMovie from './pages/OneMovie';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
-import Category from './pages/Category';
+import Genres from './pages/Genres';
+import OneGenre from './pages/OneGenre';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,8 +47,14 @@ const App: FC = () => {
             <Route path="/page/Movies" exact>
               <Movies />
             </Route>
-            <Route path="/page/Category" exact>
-              <Category />
+            <Route path="/page/Movies/:id" exact>
+              <OneMovie />
+            </Route>
+            <Route path="/page/Genres" exact>
+              <Genres />
+            </Route>
+            <Route path="/page/Genres/:id" exact>
+              <OneGenre />
             </Route>
             <Route path="/page/Admin" exact>
               <Admin />
@@ -53,6 +62,7 @@ const App: FC = () => {
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
+      <PageMeta />
     </IonApp>
   );
 };

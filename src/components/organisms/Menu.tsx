@@ -59,8 +59,8 @@ const appPages: AppPage[] = [
     mdIcon: videocamSharp,
   },
   {
-    title: 'Category',
-    url: '/page/Category',
+    title: 'Genres',
+    url: '/page/Genres',
     iosIcon: list,
     mdIcon: listSharp,
   },
